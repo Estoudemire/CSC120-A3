@@ -9,7 +9,6 @@ class Conversation {
 
     //Defining variables I'll need
     int numRounds = 0;
-    String userResponse = " "; 
     //Defining an array list for the transcript 
     ArrayList<String> transcript = new ArrayList<String>(); 
 
@@ -25,34 +24,32 @@ class Conversation {
     //First, asking user for the number of rounds they want
     System.out.println("How many rounds would you like?"); 
     numRounds = scanner.nextInt(); 
-    System.out.println(" "); //Formatting
-    
-    //Next, greeting the user & adding it to the transcript
-    System.out.println(starter); 
+
+    //Greeting the user, adding it to the transcript
+    System.out.print(starter); 
     transcript.add(starter); 
 
-    
-    //A for loop with however many rounds the user requested 
-    
-      for (int i = 0; i < numRounds; i++){
-        userResponse = scanner.nextLine();
-        transcript.add(userResponse);
-        if (!userResponse.equals(" ")){
-          System.out.println(randResponseOne); 
-          transcript.add(randResponseOne); 
-        }
-      }
-    
-    //Ending the conversation
-    System.out.println(ending); 
-    transcript.add(ending); 
+    //Looping for however many rounds the user wanted
+    for (int i = 1; i <= numRounds; i++){
+      //Taking the user response
+      System.out.println(" "); 
+      String userResponse = scanner.nextLine(); 
+      transcript.add(userResponse); 
 
-    //Printing the transcript
-    System.out.println(" "); //Formatting
-    System.out.println("TRANSCRIPT:");
-    for (int x = 0; x < transcript.size(); x++){
-        System.out.println(transcript.get(x)); 
+      //Mirroring the response if possible
+      if (userResponse.contains("I ")){
+        String newString = userResponse.replace("I", "You");
+        System.out.println(newString); 
+        transcript.add(newString);
+      }  else {
+        System.out.println(randResponseOne); 
+        transcript.add(randResponseOne);
+      }
     }
-    
+
+    //Printing out the transcript
+    System.out.println("TRANSCRIPT:"); 
+    System.out.println(transcript); 
+
   }
 }
