@@ -49,8 +49,23 @@ class Conversation {
         newString = newString.concat("?");
         System.out.println(newString); 
         transcript.add(newString);
-      }
-      else {
+      } else if (userResponse.contains("am")){
+        String newString = userResponse.replace("am", "are");
+        System.out.println(newString); 
+        transcript.add(newString);
+      } else if (userResponse.contains("you")) {
+        String newString = userResponse.replace("you", "me");
+        System.out.println(newString); 
+        transcript.add(newString);
+      } else if (userResponse.contains("my")) {
+        String newString = userResponse.replace("my", "your");
+        System.out.println(newString); 
+        transcript.add(newString);
+      } else if (userResponse.contains("your")){
+        String newString = userResponse.replace("your", "my");
+        System.out.println(newString); 
+        transcript.add(newString);
+      } else {
         System.out.println(randResponseOne); 
         transcript.add(randResponseOne);
       }
