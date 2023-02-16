@@ -1,11 +1,13 @@
-//Importing the scanner & ArrayList class 
+//Importing the scanner, Random, & ArrayList class 
 import java.util.Scanner; 
 import java.util.ArrayList; 
+import java.util.Random; 
 
 class Conversation {
   public static void main(String[] arguments) {
-    //Creating a scanner object
+    //Creating a scanner & rand object
     Scanner scanner = new Scanner(System.in); 
+    Random rand = new Random(); 
 
     //Defining variables I'll need
     int numRounds = 0;
@@ -17,8 +19,9 @@ class Conversation {
     String ending = "I've got to go. See you later! :)"; 
     String randResponseOne = "That's really cool!"; 
     String randResponseTwo = "Can you tell me more about that?"; 
+    String randResponseThree = "What else are you thinking about?";
     //Putting the responses in a Static Array
-    String[] responseArray = {starter, ending, randResponseOne, randResponseTwo}; 
+    String[] responseArray = {randResponseOne, randResponseTwo, randResponseThree}; 
 
     //ACTIVE CODE
     //First, asking user for the number of rounds they want
@@ -66,8 +69,10 @@ class Conversation {
         System.out.println(newString); 
         transcript.add(newString);
       } else {
-        System.out.println(randResponseOne); 
-        transcript.add(randResponseOne);
+        //Getting a random response
+        int randNumber = rand.nextInt(3); 
+        System.out.println(responseArray[randNumber]); 
+        transcript.add(responseArray[randNumber]);
       }
     }
 
