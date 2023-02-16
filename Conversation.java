@@ -83,7 +83,8 @@ class Conversation {
     //Printing out the transcript
     System.out.println(" "); 
     System.out.println("TRANSCRIPT:"); //Formatting
-    System.out.println(transcript); 
-
+    for (int y = 0; y <= transcript.size()-1; y++){
+      System.out.println(transcript.get(y)); 
+    }
   }
 }
