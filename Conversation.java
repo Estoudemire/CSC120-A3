@@ -21,22 +21,29 @@ class Conversation {
     //Putting the responses in a Static Array
     String[] responseArray = {starter, ending, randResponseOne, randResponseTwo}; 
 
+    //ACTIVE CODE
     //First, asking user for the number of rounds they want
     System.out.println("How many rounds would you like?"); 
     numRounds = scanner.nextInt(); 
     System.out.println(" "); //Formatting
+    
     //Next, greeting the user & adding it to the transcript
     System.out.println(starter); 
     transcript.add(starter); 
+
+    
     //A for loop with however many rounds the user requested 
-    for (int i = 0; i < numRounds; i++){
-      userResponse = scanner.nextLine();
-      transcript.add(userResponse); 
-      if (!userResponse.equals(" ")){
-        System.out.println(randResponseOne); 
-        transcript.add(randResponseOne); 
+    
+      for (int i = 0; i < numRounds; i++){
+        userResponse = scanner.nextLine();
+        transcript.add(userResponse);
+        if (!userResponse.equals(" ")){
+          System.out.println(randResponseOne); 
+          transcript.add(randResponseOne); 
+        }
       }
-    }
+    
+    //Ending the conversation
     System.out.println(ending); 
     transcript.add(ending); 
 
