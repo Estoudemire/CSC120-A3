@@ -39,16 +39,30 @@ class Conversation {
       //Mirroring the response if possible
       if (userResponse.contains("I ")){
         String newString = userResponse.replace("I", "You");
+        //Phrases the new String as a question
+        newString = newString.concat("?");
         System.out.println(newString); 
         transcript.add(newString);
-      }  else {
+      } else if (userResponse.contains("me")){
+        String newString = userResponse.replace("me", "you");
+        //Phrases the new String as a question
+        newString = newString.concat("?");
+        System.out.println(newString); 
+        transcript.add(newString);
+      }
+      else {
         System.out.println(randResponseOne); 
         transcript.add(randResponseOne);
       }
     }
 
+    //Ending the conversation 
+    System.out.println(ending); 
+    transcript.add(ending); 
+
     //Printing out the transcript
-    System.out.println("TRANSCRIPT:"); 
+    System.out.println(" "); 
+    System.out.println("TRANSCRIPT:"); //Formatting
     System.out.println(transcript); 
 
   }
