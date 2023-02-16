@@ -22,7 +22,7 @@ ___Part__ 1 pt: Allocates static array of canned responses
 
 ### Level 2 (3 pts)
 
-___Yes__ 1 pt: Uses a canned response when no mirror words detected
+___Part__ 1 pt: Uses a canned response when no mirror words detected
 
 ___Yes__ 1 pt: Detects the requested set of mirror words (at minimum)
 
@@ -66,4 +66,4 @@ ___Yes__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
 ___Yes__ 1 pt: All required files included with submission (including completed checklist file)
 
-___No__ 1 pt: `reflection.md` contains your reflection on the assignment
+___Part__ 1 pt: `reflection.md` contains your reflection on the assignment
